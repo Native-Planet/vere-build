@@ -25,8 +25,9 @@ RUN apt update && apt install bazel
 RUN apt-get install -y automake git libtool
 RUN apt-get install -y musl musl-dev musl-tools
 WORKDIR /workspace
-RUN git clone https://github.com/urbit/vere
+RUN git clone https://github.com/yapishu/vere
 WORKDIR /workspace/vere
+RUN git checkout master
 ENV USER=root
 RUN arch=$(uname -m) && \
     if [ "$arch" = "x86_64" ]; then \
